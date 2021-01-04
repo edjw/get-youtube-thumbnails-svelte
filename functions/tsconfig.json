@@ -1,0 +1,20 @@
+{
+	"extends": "@tsconfig/svelte/tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"target": "es6",
+		"esModuleInterop": true,
+		"outDir": "../lambda",
+	},
+	"include": [
+		"./*.ts",
+	],
+	"exclude": [
+		"src/**/*",
+		"src/node_modules/**/*",
+		"node_modules/*",
+		"__sapper__/*",
+		"static/*"
+	]
+}
