@@ -9,8 +9,6 @@
 	},
 	"include": [
 		"./*.ts",
-		"getYouTubeThumbnails.js",
-		"fetchCloudinaryOverlayImage.js"
 	],
 	"exclude": [
 		"src/**/*",
