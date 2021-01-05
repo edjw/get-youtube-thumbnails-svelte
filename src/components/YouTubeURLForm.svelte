@@ -32,7 +32,7 @@
         }
 
         const rawYTData = await fetch(
-            `/.netlify/lambda-build/getYouTubeThumbnails?videoID=${id}`
+            `/.netlify/functions/getYouTubeThumbnails?videoID=${id}`
         ).then((response) => response.json());
 
         const videoData = rawYTData["videoData"][0];

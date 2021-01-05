@@ -25,7 +25,7 @@
 
     const getCloudinaryImage = async (event) => {
         const cloudinaryURL = await fetch(
-            `/.netlify/lambda-build/fetchCloudinaryOverlayImage?url=${thumbnailData.url}&width=${cloudinaryWidth}`
+            `/.netlify/functions/fetchCloudinaryOverlayImage?url=${thumbnailData.url}&width=${cloudinaryWidth}`
         )
             .then((response) => response.json())
             .catch((error) => console.log(error));
