@@ -7,7 +7,7 @@
     "watch:dev": "sapper dev",
     "dev": "cross-env NODE_ENV=dev run-p build:lambda-ts dev:server watch:*",
     "dev:server": "netlify-lambda serve functions",
-    "build": "run-s build:css build:export build:lambda",
+    "build": "run-s build:css build:export build-lambda-ts build:lambda",
     "build:css": "NODE_ENV=production postcss src/assets/global.pcss -o static/global.css",
     "build:sapper": "sapper build",
     "build:export": "sapper export",
