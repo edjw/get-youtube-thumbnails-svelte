@@ -16,16 +16,31 @@ export const handler = async function (
 
     const youtubeVideoID = event.queryStringParameters.videoID;
 
-    return fetch(`${YOUTUBE_API_ENDPOINT}${youtubeVideoID}&part=snippet&key=${YOUTUBE_API_KEY}`, { headers: { "Accept": "application/json" } })
+    if (!youtubeVideoID) {
+        callback(null,
+            {
+                statusCode: 500,
+                body: JSON.stringify("Video ID required")
+            })
+    }
+
+    const data = await fetch(`${YOUTUBE_API_ENDPOINT}${youtubeVideoID}&part=snippet&key=${YOUTUBE_API_KEY}`, { headers: { "Accept": "application/json" } })
         .then(response => response.json())
-        // .then(data => (console.log(data)))
-        .then(data => ({
-            statusCode: 200,
-            body: JSON.stringify({
-                videoData: (data.items),
-            }),
-        }))
-        .catch(error => ({ statusCode: 422, body: String(error) }));
+        .catch((error) => console.log(error));
+
+
+    callback(null, {
+        statusCode: 200,
+        headers: {
+
+        },
+        body: JSON.stringify({
+            videoData: data.items
+        })
+    }
+    )
+
+
 };
 
 

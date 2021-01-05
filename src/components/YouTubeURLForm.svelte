@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { currentVideoData } from "../stores/currentVideoData";
+    import { currentVideoData } from "../stores/store";
 
     import getVideoId from "get-video-id";
     const _ = {
@@ -33,13 +33,11 @@
 
         const rawYTData = await fetch(
             `/.netlify/functions/getYouTubeThumbnails?videoID=${id}`
-        )
-            // .then((response) => console.log(response.json()));
-            .then((response) => response.json());
+        ).then((response) => response.json());
 
         const videoData = rawYTData["videoData"][0];
         const videoDetails = videoData.snippet;
-        // console.log(videoDetails);
+
         // const niceYTData: ytVideoData = {
         const niceYTData = {
             id: videoData.id,
@@ -70,12 +68,7 @@
             ],
         };
 
-        // console.log(niceYTData);
-
         $currentVideoData = niceYTData;
-
-        // console.log(niceYTData);
-        // return niceYTData;
     };
 </script>
 

@@ -1,4 +1,9 @@
 import { writable } from "svelte/store";
+
+const currentVideoData = writable(null);
+const currentCloudinaryURL = writable(null);
+
+export { currentVideoData, currentCloudinaryURL }
 // interface ytVideoData {
 //     id: string;
 //     link: string;
@@ -19,13 +24,13 @@ import { writable } from "svelte/store";
 //     ];
 // }
 // const videoData: ytVideoData = {
-const videoData = {
-    id: "",
-    link: "",
-    title: "",
-    channelTitle: "",
-    thumbnails: []
-};
+// const videoData = {
+//     id: "",
+//     link: "",
+//     title: "",
+//     channelTitle: "",
+//     thumbnails: []
+// };
 // id: "",
 // link: "",
 // title: "",
@@ -69,6 +74,3 @@ const videoData = {
 //     ]
 // }
 
-const currentVideoData = writable(videoData);
-
-export { currentVideoData }

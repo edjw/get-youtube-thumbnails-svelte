@@ -8,7 +8,7 @@
 		"outDir": "../lambda",
 	},
 	"include": [
-		"./*.ts",
+		"./*.ts"
 	],
 	"exclude": [
 		"src/**/*",

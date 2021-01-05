@@ -18,6 +18,7 @@
     "serve": "serve ___sapper__/export"
   },
   "dependencies": {
+    "cloudinary": "^1.23.0",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "get-video-id": "^3.1.5",

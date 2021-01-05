@@ -1,14 +1,11 @@
 <script lang="ts">
-    import { currentVideoData } from "../stores/currentVideoData";
-    // console.log($currentVideoData);
+    import { currentVideoData, currentCloudinaryURL } from "../stores/store";
+    import FetchCloudinaryImageButton from "./FetchCloudinaryImageButton.svelte";
 
     $: {
         console.log($currentVideoData);
+        console.log($currentCloudinaryURL);
     }
-
-    const getCloudinaryImage = () => {
-        console.log("cloudinary");
-    };
 </script>
 
 <h2 class="mt-4 text-lg underline">
@@ -22,6 +19,7 @@
             {thumbnail.width}. Height:
             {thumbnail.height}
         </p>
+
         <img
             src={thumbnail.url}
             alt=""
@@ -29,12 +27,15 @@
             width={thumbnail.width}
             height={thumbnail.height} />
 
-        <form class="mt-4" on:submit|preventDefault={getCloudinaryImage}>
-            <button
-                type="submit"
-                class="w-48 p-4 mt-2 bg-yellow-500 rounded text-gray-50">
-                Get image with Play button overlay
-            </button>
-        </form>
+        <FetchCloudinaryImageButton thumbnailURL={thumbnail.url} />
+
+        {#if $currentCloudinaryURL !== null && $currentCloudinaryURL.cloudinaryURL.endsWith(thumbnail.url)}
+            <img
+                src={$currentCloudinaryURL.cloudinaryURL}
+                alt=""
+                class="my-4"
+                width={thumbnail.width}
+                height={thumbnail.height} />
+        {/if}
     </section>
 {/each}
