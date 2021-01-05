@@ -1,4 +1,4 @@
-import type { APIGatewayProxyEvent, APIGatewayProxyCallback } from "aws-lambda";
+// import type { APIGatewayProxyEvent, APIGatewayProxyCallback } from "aws-lambda";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,12 +14,16 @@ cloudinary.config({
     api_secret: CLOUDINARY_API_SECRET
 });
 
+// export const handler = async function (
+//     event: APIGatewayProxyEvent,
+//     context: any,
+//     callback: APIGatewayProxyCallback
+// ) {
 export const handler = async function (
-    event: APIGatewayProxyEvent,
-    context: any,
-    callback: APIGatewayProxyCallback
+    event,
+    context,
+    callback
 ) {
-
 
     const thumbnailData = {
         url: event.queryStringParameters.url,
