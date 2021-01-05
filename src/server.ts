@@ -12,7 +12,7 @@ const server = polka();
 const devProxy = {
 	'/.netlify': {
 		target: 'http://localhost:9000',
-		pathRewrite: { '^/.netlify/lamda-build': '' }
+		pathRewrite: { '^/.netlify/functions': '' }
 	}
 };
 
