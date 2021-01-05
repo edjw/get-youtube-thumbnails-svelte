@@ -1,18 +1,12 @@
-// import type { APIGatewayProxyEvent, APIGatewayProxyCallback } from "aws-lambda";
 import dotenv from "dotenv";
 dotenv.config();
 
 import fetch from "node-fetch";
 
-const YOUTUBE_API_KEY: string = process.env.YOUTUBE_API_KEY;
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-const YOUTUBE_API_ENDPOINT: string = "https://www.googleapis.com/youtube/v3/videos?id="
+const YOUTUBE_API_ENDPOINT = "https://www.googleapis.com/youtube/v3/videos?id="
 
-// export const handler = async function (
-//     event: APIGatewayProxyEvent,
-//     context: any,
-//     callback: APIGatewayProxyCallback
-// ) {
 export const handler = async function (
     event,
     context,

@@ -8,7 +8,9 @@
 		"outDir": "../lambda",
 	},
 	"include": [
-		"./*.ts"
+		"./*.ts",
+		"getYouTubeThumbnails.js",
+		"fetchCloudinaryOverlayImage.js"
 	],
 	"exclude": [
 		"src/**/*",

@@ -1,10 +1,9 @@
-// import type { APIGatewayProxyEvent, APIGatewayProxyCallback } from "aws-lambda";
 import dotenv from "dotenv";
 dotenv.config();
 
-const CLOUDINARY_CLOUD_NAME: string = process.env.CLOUDINARY_CLOUD_NAME;
-const CLOUDINARY_API_KEY: string = process.env.CLOUDINARY_API_KEY;
-const CLOUDINARY_API_SECRET: string = process.env.CLOUDINARY_API_SECRET;
+const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
+const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
 
 const cloudinary = require("cloudinary").v2;
 
@@ -14,11 +13,7 @@ cloudinary.config({
     api_secret: CLOUDINARY_API_SECRET
 });
 
-// export const handler = async function (
-//     event: APIGatewayProxyEvent,
-//     context: any,
-//     callback: APIGatewayProxyCallback
-// ) {
+
 export const handler = async function (
     event,
     context,
