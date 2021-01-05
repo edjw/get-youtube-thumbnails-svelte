@@ -21,6 +21,7 @@
     "cloudinary": "^1.23.0",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
+    "encoding": ^"0.1.13",
     "get-video-id": "^3.1.5",
     "netlify-lambda": "^2.0.2",
     "node-fetch": "^2.6.1",
