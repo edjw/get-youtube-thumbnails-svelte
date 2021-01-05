@@ -29,7 +29,12 @@ export const handler = async function (
             })
     }
 
-    const data = await fetch(`${YOUTUBE_API_ENDPOINT}${youtubeVideoID}&part=snippet&key=${YOUTUBE_API_KEY}`, { headers: { "Accept": "application/json" } })
+    const data = await fetch(`${YOUTUBE_API_ENDPOINT}${youtubeVideoID}&part=snippet&key=${YOUTUBE_API_KEY}`, {
+        headers: {
+            "Accept": "application/json",
+            "content-type": "application/json"
+        }
+    })
         .then(response => response.json())
         .catch((error) => console.log(error));
 
