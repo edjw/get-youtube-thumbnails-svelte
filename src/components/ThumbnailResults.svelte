@@ -21,21 +21,12 @@
         </p>
 
         <img
-            src={thumbnail.url}
+            src={$currentCloudinaryURL !== null && $currentCloudinaryURL.cloudinaryURL.endsWith(thumbnail.url) ? $currentCloudinaryURL.cloudinaryURL : thumbnail.url}
             alt=""
             class="my-4"
             width={thumbnail.width}
             height={thumbnail.height} />
 
         <FetchCloudinaryImageButton thumbnailURL={thumbnail.url} />
-
-        {#if $currentCloudinaryURL !== null && $currentCloudinaryURL.cloudinaryURL.endsWith(thumbnail.url)}
-            <img
-                src={$currentCloudinaryURL.cloudinaryURL}
-                alt=""
-                class="my-4"
-                width={thumbnail.width}
-                height={thumbnail.height} />
-        {/if}
     </section>
 {/each}

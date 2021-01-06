@@ -1,7 +1,6 @@
 <script type="ts">
     import { currentCloudinaryURL } from "../stores/store";
     export let thumbnailURL: string;
-    // export let thumbnailWidth: number;
 
     const imageSizeName: string = thumbnailURL.split("/").pop();
     let cloudinaryWidth: string = "";
@@ -38,6 +37,6 @@
     <button
         class="p-4 mt-2 bg-yellow-500 rounded w-72 text-gray-50"
         type="submit">
-        Get image with Play button overlay
+        Overlay image with Play button
     </button>
 </form>
