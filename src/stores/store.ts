@@ -2,8 +2,11 @@ import { writable } from "svelte/store";
 
 const currentVideoData = writable(null);
 const currentCloudinaryURL = writable(null);
+const imageLoadingState = writable("notLoading");
+const overlayImageSizeName = writable("");
 
-export { currentVideoData, currentCloudinaryURL }
+
+export { currentVideoData, currentCloudinaryURL, imageLoadingState, overlayImageSizeName }
 // interface ytVideoData {
 //     id: string;
 //     link: string;

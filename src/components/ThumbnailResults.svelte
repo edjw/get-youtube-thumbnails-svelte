@@ -1,11 +1,15 @@
 <script lang="ts">
-    import { currentVideoData, currentCloudinaryURL } from "../stores/store";
+    import {
+        currentVideoData,
+        currentCloudinaryURL,
+        imageLoadingState,
+    } from "../stores/store";
     import FetchCloudinaryImageButton from "./FetchCloudinaryImageButton.svelte";
-
-    $: {
-        console.log($currentVideoData);
-        console.log($currentCloudinaryURL);
-    }
+    import RemoveOverlayButton from "./RemoveOverlayButton.svelte";
+    // $: {
+    //     console.log($currentVideoData);
+    //     console.log($currentCloudinaryURL);
+    // }
 </script>
 
 <h2 class="mt-4 text-lg underline">
@@ -26,7 +30,11 @@
             class="my-4"
             width={thumbnail.width}
             height={thumbnail.height} />
-
+        <!--
+        {#if $imageLoadingState.status === 'loaded' && $currentCloudinaryURL.cloudinaryURL.endsWith(thumbnail.url)}
+            <RemoveOverlayButton />
+        {:else} -->
         <FetchCloudinaryImageButton thumbnailURL={thumbnail.url} />
+        <!-- {/if} -->
     </section>
 {/each}

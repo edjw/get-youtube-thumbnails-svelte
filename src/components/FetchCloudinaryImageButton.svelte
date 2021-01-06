@@ -1,5 +1,9 @@
 <script type="ts">
-    import { currentCloudinaryURL } from "../stores/store";
+    import {
+        currentCloudinaryURL,
+        imageLoadingState,
+        overlayImageSizeName,
+    } from "../stores/store";
     export let thumbnailURL: string;
 
     const imageSizeName: string = thumbnailURL.split("/").pop();
@@ -23,6 +27,8 @@
     };
 
     const getCloudinaryImage = async (event) => {
+        $imageLoadingState = "loading";
+
         const cloudinaryURL = await fetch(
             `/.netlify/functions/fetchCloudinaryOverlayImage?url=${thumbnailData.url}&width=${cloudinaryWidth}`
         )
@@ -30,6 +36,9 @@
             .catch((error) => console.log(error));
 
         $currentCloudinaryURL = cloudinaryURL;
+
+        $imageLoadingState = "loaded";
+        $overlayImageSizeName = imageSizeName;
     };
 </script>
 
