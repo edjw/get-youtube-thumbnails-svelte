@@ -15,7 +15,7 @@
 	<title>Get thumbnail images for YouTube Videos</title>
 </svelte:head>
 
-<header class="px-4 py-2 -ml-4 -mr-4 bg-yellow-400 sm:mt-1 sm:rounded">
+<header class="px-4 py-2 -ml-4 -mr-4 bg-yellow-300 sm:mt-1 sm:rounded">
 	<h1 class="text-2xl">
 		<a href="/" on:click|preventDefault={backToHome}>Get thumbnail images
 			for
