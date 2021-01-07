@@ -44,7 +44,7 @@
 
 <form class="mt-4" on:submit|preventDefault={getCloudinaryImage}>
     <button
-        class="p-4 mt-2 bg-yellow-500 rounded w-72 text-gray-50"
+        class="p-4 mt-2 bg-yellow-300 rounded w-72 text-gray-800"
         type="submit">
         Overlay image with Play button
     </button>

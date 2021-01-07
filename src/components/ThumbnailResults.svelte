@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import {
         currentVideoData,
         currentCloudinaryURL,
@@ -20,7 +20,7 @@
 <ClearFetchedVideoButton />
 
 {#each $currentVideoData.thumbnails as { name, thumbnail }, i}
-    <section class="mt-8 border-t-2 border-yellow-400">
+    <section class="mt-8 border-t-2 border-yellow-300">
         <p class="mt-4">
             {i + 1}) Width:
             {thumbnail.width}. Height:

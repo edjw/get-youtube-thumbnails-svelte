@@ -7,8 +7,8 @@
 
 <div class="mt-4">
     <button
-        class="p-2 text-sm bg-yellow-500 rounded text-gray-50"
+        class="p-2 text-xs text-gray-800 bg-yellow-300 rounded"
         on:click={backToHome}>
-        ← Different Video
+        ← Try a different video
     </button>
 </div>
