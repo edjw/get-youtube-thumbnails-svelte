@@ -25691,6 +25691,10 @@ video {
   grid-template-columns: none;
 }
 
+.grid-cols-full {
+  grid-template-columns: 100%;
+}
+
 .auto-cols-auto {
   grid-auto-columns: auto;
 }
@@ -25901,6 +25905,10 @@ video {
 
 .grid-rows-none {
   grid-template-rows: none;
+}
+
+.grid-rows-auto-1-auto {
+  grid-template-rows: auto 1fr auto;
 }
 
 .auto-rows-auto {
@@ -54265,6 +54273,10 @@ video {
     grid-template-columns: none;
   }
 
+  .sm\:grid-cols-full {
+    grid-template-columns: 100%;
+  }
+
   .sm\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -54475,6 +54487,10 @@ video {
 
   .sm\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .sm\:grid-rows-auto-1-auto {
+    grid-template-rows: auto 1fr auto;
   }
 
   .sm\:auto-rows-auto {
@@ -82809,6 +82825,10 @@ video {
     grid-template-columns: none;
   }
 
+  .md\:grid-cols-full {
+    grid-template-columns: 100%;
+  }
+
   .md\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -83019,6 +83039,10 @@ video {
 
   .md\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .md\:grid-rows-auto-1-auto {
+    grid-template-rows: auto 1fr auto;
   }
 
   .md\:auto-rows-auto {
@@ -111353,6 +111377,10 @@ video {
     grid-template-columns: none;
   }
 
+  .lg\:grid-cols-full {
+    grid-template-columns: 100%;
+  }
+
   .lg\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -111563,6 +111591,10 @@ video {
 
   .lg\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .lg\:grid-rows-auto-1-auto {
+    grid-template-rows: auto 1fr auto;
   }
 
   .lg\:auto-rows-auto {
@@ -139897,6 +139929,10 @@ video {
     grid-template-columns: none;
   }
 
+  .xl\:grid-cols-full {
+    grid-template-columns: 100%;
+  }
+
   .xl\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -140107,6 +140143,10 @@ video {
 
   .xl\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .xl\:grid-rows-auto-1-auto {
+    grid-template-rows: auto 1fr auto;
   }
 
   .xl\:auto-rows-auto {
@@ -168441,6 +168481,10 @@ video {
     grid-template-columns: none;
   }
 
+  .\32xl\:grid-cols-full {
+    grid-template-columns: 100%;
+  }
+
   .\32xl\:auto-cols-auto {
     grid-auto-columns: auto;
   }
@@ -168651,6 +168695,10 @@ video {
 
   .\32xl\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .\32xl\:grid-rows-auto-1-auto {
+    grid-template-rows: auto 1fr auto;
   }
 
   .\32xl\:auto-rows-auto {

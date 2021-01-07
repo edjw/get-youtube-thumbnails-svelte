@@ -72,7 +72,7 @@
     };
 </script>
 
-<form class="mt-4" on:submit|preventDefault={fetchVideoData}>
+<form class="mt-4" on:submit|once|preventDefault={fetchVideoData}>
     <label>Enter a YouTube URL like
         <code>https://www.youtube.com/watch?v=3WM9OdcSxZM</code>
         <input

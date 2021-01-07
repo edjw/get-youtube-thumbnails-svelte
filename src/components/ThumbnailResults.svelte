@@ -5,7 +5,8 @@
         imageLoadingState,
     } from "../stores/store";
     import FetchCloudinaryImageButton from "./FetchCloudinaryImageButton.svelte";
-    import RemoveOverlayButton from "./RemoveOverlayButton.svelte";
+    import ClearFetchedVideoButton from "./ClearFetchedVideoButton.svelte";
+    // import RemoveOverlayButton from "./RemoveOverlayButton.svelte";
     // $: {
     //     console.log($currentVideoData);
     //     console.log($currentCloudinaryURL);
@@ -15,6 +16,8 @@
 <h2 class="mt-4 text-lg underline">
     <a href={$currentVideoData.link}>{$currentVideoData.title}</a>
 </h2>
+
+<ClearFetchedVideoButton />
 
 {#each $currentVideoData.thumbnails as { name, thumbnail }, i}
     <section class="mt-8 border-t-2 border-yellow-400">
@@ -29,7 +32,8 @@
             alt=""
             class="my-4"
             width={thumbnail.width}
-            height={thumbnail.height} />
+            height={thumbnail.height}
+            loading="lazy" />
         <!--
         {#if $imageLoadingState.status === 'loaded' && $currentCloudinaryURL.cloudinaryURL.endsWith(thumbnail.url)}
             <RemoveOverlayButton />

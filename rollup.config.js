@@ -7,7 +7,7 @@ import svelte from "rollup-plugin-svelte";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
-import typescript from "@rollup/plugin-typescript";
+// import typescript from "@rollup/plugin-typescript";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 import { preprocess } from "./svelte.config.js";
@@ -25,7 +25,8 @@ const onwarn = (warning, onwarn) =>
 
 export default {
   client: {
-    input: config.client.input().replace(/\.js$/, ".ts"),
+    input: config.client.input(),
+    // input: config.client.input().replace(/\.js$/, ".ts"),
     output: config.client.output(),
     plugins: [
       replace({
@@ -50,38 +51,38 @@ export default {
         dedupe: ["svelte"],
       }),
       commonjs(),
-      typescript({
-        sourceMap: dev,
-      }),
+      // typescript({
+      //   sourceMap: dev,
+      // }),
 
       legacy &&
-        babel({
-          extensions: [".js", ".mjs", ".html", ".svelte"],
-          babelHelpers: "runtime",
-          exclude: ["node_modules/@babel/**"],
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                targets: "> 0.25%, not dead",
-              },
-            ],
+      babel({
+        extensions: [".js", ".mjs", ".html", ".svelte"],
+        babelHelpers: "runtime",
+        exclude: ["node_modules/@babel/**"],
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              targets: "> 0.25%, not dead",
+            },
           ],
-          plugins: [
-            "@babel/plugin-syntax-dynamic-import",
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                useESModules: true,
-              },
-            ],
+        ],
+        plugins: [
+          "@babel/plugin-syntax-dynamic-import",
+          [
+            "@babel/plugin-transform-runtime",
+            {
+              useESModules: true,
+            },
           ],
-        }),
+        ],
+      }),
 
       !dev &&
-        terser({
-          module: true,
-        }),
+      terser({
+        module: true,
+      }),
     ],
 
     preserveEntrySignatures: false,
@@ -89,7 +90,8 @@ export default {
   },
 
   server: {
-    input: { server: config.server.input().server.replace(/\.js$/, ".ts") },
+    input: config.server.input(),
+    // input: { server: config.server.input().server.replace(/\.js$/, ".ts") },
     output: config.server.output(),
     plugins: [
       replace({
@@ -115,9 +117,9 @@ export default {
         dedupe: ["svelte"],
       }),
       commonjs(),
-      typescript({
-        sourceMap: dev,
-      }),
+      // typescript({
+      //   sourceMap: dev,
+      // }),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules
@@ -128,7 +130,8 @@ export default {
   },
 
   serviceworker: {
-    input: config.serviceworker.input().replace(/\.js$/, ".ts"),
+    input: config.serviceworker.input(),
+    // input: config.serviceworker.input().replace(/\.js$/, ".ts"),
     output: config.serviceworker.output(),
     plugins: [
       resolve(),
@@ -137,7 +140,7 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       commonjs(),
-      typescript({ sourceMap: dev }),
+      // typescript({ sourceMap: dev }),
       !dev && terser(),
     ],
 

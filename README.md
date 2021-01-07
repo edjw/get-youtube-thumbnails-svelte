@@ -9,4 +9,5 @@ don't forget to set up the environment variables on netlify and/or locally with 
 
 todo
 
-get typescript build, config, scripts, interaces etc back working
+- get typescript build, config, scripts, interaces etc back working
+- improve ui so you can click on a reset button to get the un-overlaid image on a per-image basis
